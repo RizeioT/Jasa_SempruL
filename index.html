@@ -1,0 +1,1201 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>SempruL — Jasa Pembuatan App Modern</title>
+
+  <meta name="description" content="SempruL adalah jasa pembuatan aplikasi modern untuk mahasiswa, UMKM, startup, dan pekerja muda dengan desain clean dan pengalaman digital premium."/>
+
+  <meta name="keywords" content="jasa pembuatan aplikasi, jasa website, mobile app, UI UX, semprul"/>
+
+  <meta name="author" content="SempruL"/>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+
+  <style>
+
+    :root{
+      --primary:#5E8B7E;
+      --primary-dark:#3D5F56;
+      --secondary:#F6F2EA;
+      --white:#ffffff;
+      --text:#222222;
+      --muted:#6f6f6f;
+      --card:#ffffff;
+      --shadow:0 15px 35px rgba(0,0,0,.08);
+      --radius:24px;
+      --transition:all .35s ease;
+    }
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family:'Poppins',sans-serif;
+      background:var(--secondary);
+      color:var(--text);
+      overflow-x:hidden;
+    }
+
+    a{
+      text-decoration:none;
+      color:inherit;
+    }
+
+    img{
+      width:100%;
+      display:block;
+    }
+
+    section{
+      padding:90px 7%;
+    }
+
+    .section-title{
+      text-align:center;
+      margin-bottom:60px;
+    }
+
+    .section-title span{
+      color:var(--primary);
+      font-weight:600;
+      letter-spacing:1px;
+      text-transform:uppercase;
+      font-size:.9rem;
+    }
+
+    .section-title h2{
+      font-size:clamp(2rem,5vw,3rem);
+      margin-top:14px;
+      line-height:1.2;
+    }
+
+    .section-title p{
+      max-width:700px;
+      margin:18px auto 0;
+      color:var(--muted);
+      line-height:1.8;
+    }
+
+    /* NAVBAR */
+
+    header{
+      position:fixed;
+      width:100%;
+      top:0;
+      z-index:999;
+      background:rgba(255,255,255,.7);
+      backdrop-filter:blur(14px);
+      border-bottom:1px solid rgba(0,0,0,.05);
+    }
+
+    .navbar{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:18px 7%;
+    }
+
+    .logo{
+      font-size:1.5rem;
+      font-weight:800;
+      color:var(--primary);
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+
+    .logo i{
+      background:var(--primary);
+      color:white;
+      width:42px;
+      height:42px;
+      border-radius:50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:1rem;
+    }
+
+    .nav-links{
+      display:flex;
+      gap:30px;
+    }
+
+    .nav-links a{
+      font-weight:500;
+      position:relative;
+      transition:var(--transition);
+    }
+
+    .nav-links a::after{
+      content:"";
+      position:absolute;
+      left:0;
+      bottom:-6px;
+      width:0%;
+      height:2px;
+      background:var(--primary);
+      transition:var(--transition);
+    }
+
+    .nav-links a:hover::after{
+      width:100%;
+    }
+
+    .nav-links a:hover{
+      color:var(--primary);
+    }
+
+    /* HERO */
+
+    .hero{
+      min-height:100vh;
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+      align-items:center;
+      gap:60px;
+      padding-top:130px;
+
+      background:
+      linear-gradient(rgba(246,242,234,.92),rgba(246,242,234,.95)),
+      url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1400&auto=format&fit=crop') center/cover;
+    }
+
+    .hero-badge{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      background:white;
+      padding:12px 18px;
+      border-radius:50px;
+      box-shadow:var(--shadow);
+      color:var(--primary);
+      margin-bottom:24px;
+      font-size:.9rem;
+      font-weight:600;
+    }
+
+    .hero h1{
+      font-size:clamp(3rem,7vw,5.5rem);
+      line-height:1.05;
+      margin-bottom:24px;
+    }
+
+    .hero h1 span{
+      color:var(--primary);
+    }
+
+    .hero p{
+      color:#555;
+      line-height:1.9;
+      font-size:1.05rem;
+      max-width:620px;
+    }
+
+    .hero-buttons{
+      display:flex;
+      flex-wrap:wrap;
+      gap:18px;
+      margin-top:35px;
+    }
+
+    .btn{
+      padding:16px 28px;
+      border-radius:50px;
+      font-weight:600;
+      transition:var(--transition);
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+    }
+
+    .btn-primary{
+      background:var(--primary);
+      color:white;
+      box-shadow:0 10px 25px rgba(94,139,126,.25);
+    }
+
+    .btn-primary:hover{
+      background:var(--primary-dark);
+      transform:translateY(-4px);
+    }
+
+    .btn-secondary{
+      background:white;
+      border:1px solid rgba(0,0,0,.08);
+    }
+
+    .btn-secondary:hover{
+      transform:translateY(-4px);
+      box-shadow:var(--shadow);
+    }
+
+    .hero-card{
+      background:white;
+      border-radius:32px;
+      padding:30px;
+      box-shadow:var(--shadow);
+      position:relative;
+      overflow:hidden;
+    }
+
+    .hero-card::before{
+      content:"";
+      position:absolute;
+      width:180px;
+      height:180px;
+      background:rgba(94,139,126,.12);
+      border-radius:50%;
+      top:-60px;
+      right:-60px;
+    }
+
+    .dashboard{
+      display:grid;
+      gap:20px;
+      position:relative;
+      z-index:2;
+    }
+
+    .dashboard-box{
+      background:var(--secondary);
+      border-radius:22px;
+      padding:22px;
+      transition:var(--transition);
+    }
+
+    .dashboard-box:hover{
+      transform:translateY(-5px);
+    }
+
+    .dashboard-box h4{
+      margin-bottom:10px;
+    }
+
+    .dashboard-box p{
+      color:#666;
+      line-height:1.7;
+      font-size:.95rem;
+    }
+
+    /* ABOUT */
+
+    .about-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      gap:50px;
+      align-items:center;
+    }
+
+    .about-image img{
+      border-radius:32px;
+      box-shadow:var(--shadow);
+      height:520px;
+      object-fit:cover;
+    }
+
+    .about-content h2{
+      font-size:2.6rem;
+      margin-bottom:20px;
+    }
+
+    .about-content p{
+      line-height:1.9;
+      color:#555;
+      margin-bottom:20px;
+    }
+
+    .features{
+      display:grid;
+      gap:18px;
+      margin-top:30px;
+    }
+
+    .feature{
+      display:flex;
+      gap:18px;
+      background:white;
+      padding:22px;
+      border-radius:22px;
+      transition:var(--transition);
+      box-shadow:var(--shadow);
+    }
+
+    .feature:hover{
+      transform:translateY(-5px);
+    }
+
+    .feature i{
+      width:54px;
+      height:54px;
+      border-radius:16px;
+      background:rgba(94,139,126,.12);
+      color:var(--primary);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:1.1rem;
+    }
+
+    .feature p{
+      margin-top:6px;
+      margin-bottom:0;
+      font-size:.95rem;
+    }
+
+    /* SERVICES */
+
+    .service-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:26px;
+    }
+
+    .service-card{
+      background:white;
+      padding:32px;
+      border-radius:30px;
+      box-shadow:var(--shadow);
+      transition:var(--transition);
+      position:relative;
+      overflow:hidden;
+    }
+
+    .service-card::before{
+      content:"";
+      position:absolute;
+      width:120px;
+      height:120px;
+      background:rgba(94,139,126,.08);
+      border-radius:50%;
+      top:-40px;
+      right:-40px;
+    }
+
+    .service-card:hover{
+      transform:translateY(-8px);
+    }
+
+    .service-icon{
+      width:68px;
+      height:68px;
+      border-radius:20px;
+      background:rgba(94,139,126,.12);
+      color:var(--primary);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:1.4rem;
+      margin-bottom:22px;
+      position:relative;
+      z-index:2;
+    }
+
+    .service-card h3{
+      margin-bottom:14px;
+      position:relative;
+      z-index:2;
+    }
+
+    .service-card p{
+      color:#666;
+      line-height:1.8;
+      position:relative;
+      z-index:2;
+    }
+
+    /* TESTIMONIALS */
+
+    .testimonial-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:25px;
+    }
+
+    .testimonial{
+      background:white;
+      padding:32px;
+      border-radius:28px;
+      box-shadow:var(--shadow);
+      transition:var(--transition);
+    }
+
+    .testimonial:hover{
+      transform:translateY(-7px);
+    }
+
+    .stars{
+      color:#ffb400;
+      margin-bottom:18px;
+    }
+
+    .testimonial p{
+      color:#555;
+      line-height:1.8;
+      margin-bottom:24px;
+    }
+
+    .profile{
+      display:flex;
+      align-items:center;
+      gap:14px;
+    }
+
+    .avatar{
+      width:52px;
+      height:52px;
+      border-radius:50%;
+      background:var(--primary);
+      color:white;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:700;
+    }
+
+    /* FAQ */
+
+    .faq-grid{
+      max-width:850px;
+      margin:auto;
+      display:grid;
+      gap:20px;
+    }
+
+    .faq-item{
+      background:white;
+      padding:26px;
+      border-radius:24px;
+      box-shadow:var(--shadow);
+      transition:var(--transition);
+    }
+
+    .faq-item:hover{
+      transform:translateY(-4px);
+    }
+
+    .faq-item h4{
+      color:var(--primary);
+      margin-bottom:10px;
+    }
+
+    .faq-item p{
+      color:#555;
+      line-height:1.8;
+    }
+
+    /* CONTACT */
+
+    .contact-wrapper{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+      gap:40px;
+    }
+
+    .contact-info{
+      background:linear-gradient(135deg,var(--primary),var(--primary-dark));
+      color:white;
+      padding:40px;
+      border-radius:32px;
+      box-shadow:var(--shadow);
+    }
+
+    .contact-info h3{
+      font-size:2rem;
+      margin-bottom:18px;
+    }
+
+    .contact-info p{
+      line-height:1.9;
+      opacity:.92;
+      margin-bottom:30px;
+    }
+
+    .contact-item{
+      display:flex;
+      gap:15px;
+      margin-bottom:22px;
+    }
+
+    form{
+      background:white;
+      padding:38px;
+      border-radius:32px;
+      box-shadow:var(--shadow);
+    }
+
+    .input-group{
+      margin-bottom:20px;
+    }
+
+    .input-group label{
+      display:block;
+      margin-bottom:8px;
+      font-weight:500;
+    }
+
+    .input-group input,
+    .input-group textarea{
+      width:100%;
+      padding:16px;
+      border-radius:18px;
+      border:1px solid #ddd;
+      font-family:inherit;
+      background:#fafafa;
+      transition:var(--transition);
+      outline:none;
+    }
+
+    .input-group input:focus,
+    .input-group textarea:focus{
+      border-color:var(--primary);
+      background:white;
+      box-shadow:0 0 0 4px rgba(94,139,126,.12);
+    }
+
+    textarea{
+      min-height:140px;
+      resize:none;
+    }
+
+    /* FOOTER */
+
+    footer{
+      background:#1f2d28;
+      color:white;
+      padding:70px 7% 30px;
+    }
+
+    .footer-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:40px;
+      margin-bottom:40px;
+    }
+
+    .footer-brand h3{
+      font-size:1.6rem;
+      margin-bottom:18px;
+    }
+
+    .footer-brand p{
+      color:#d5d5d5;
+      line-height:1.8;
+    }
+
+    .footer-links h4{
+      margin-bottom:18px;
+    }
+
+    .footer-links a{
+      display:block;
+      margin-bottom:12px;
+      color:#d5d5d5;
+      transition:var(--transition);
+    }
+
+    .footer-links a:hover{
+      color:white;
+      transform:translateX(4px);
+    }
+
+    .socials{
+      display:flex;
+      gap:14px;
+      margin-top:22px;
+    }
+
+    .socials a{
+      width:42px;
+      height:42px;
+      border-radius:50%;
+      background:rgba(255,255,255,.08);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      transition:var(--transition);
+    }
+
+    .socials a:hover{
+      background:var(--primary);
+      transform:translateY(-4px);
+    }
+
+    .copyright{
+      text-align:center;
+      padding-top:24px;
+      border-top:1px solid rgba(255,255,255,.1);
+      color:#ccc;
+      font-size:.95rem;
+    }
+
+    /* MOBILE */
+
+    @media(max-width:768px){
+
+      .nav-links{
+        display:none;
+      }
+
+      .hero{
+        text-align:center;
+      }
+
+      .hero-buttons{
+        justify-content:center;
+      }
+
+      .about-content h2{
+        font-size:2rem;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+
+  <header>
+    <nav class="navbar">
+
+      <a href="#" class="logo">
+        <i class="fa-solid fa-code"></i>
+        SempruL
+      </a>
+
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#services">Layanan</a>
+        <a href="#testimonials">Testimoni</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Kontak</a>
+      </div>
+
+    </nav>
+  </header>
+
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <div class="hero-content">
+
+      <div class="hero-badge">
+        <i class="fa-solid fa-bolt"></i>
+        Modern App Solution For Young Generation
+      </div>
+
+      <h1>
+        Bangun aplikasi modern
+        yang terlihat
+        <span>premium & powerful.</span>
+      </h1>
+
+      <p>
+        SempruL membantu mahasiswa, startup kecil, UMKM, dan pekerja muda
+        membangun aplikasi serta website modern dengan desain clean,
+        performa cepat, dan pengalaman digital yang nyaman digunakan.
+      </p>
+
+      <div class="hero-buttons">
+
+        <a href="#services" class="btn btn-primary">
+          <i class="fa-solid fa-layer-group"></i>
+          Lihat Layanan
+        </a>
+
+        <a href="#contact" class="btn btn-secondary">
+          <i class="fa-solid fa-paper-plane"></i>
+          Konsultasi Gratis
+        </a>
+
+      </div>
+
+    </div>
+
+    <div class="hero-card">
+
+      <div class="dashboard">
+
+        <div class="dashboard-box">
+          <h4>UI/UX Modern</h4>
+          <p>
+            Tampilan clean, aesthetic, dan nyaman digunakan di semua device.
+          </p>
+        </div>
+
+        <div class="dashboard-box">
+          <h4>Responsive Performance</h4>
+          <p>
+            Website dan aplikasi tetap cepat serta smooth di mobile maupun desktop.
+          </p>
+        </div>
+
+        <div class="dashboard-box">
+          <h4>Startup Ready</h4>
+          <p>
+            Cocok untuk personal branding, bisnis digital, UMKM, hingga startup modern.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ABOUT -->
+
+  <section id="about">
+
+    <div class="about-grid">
+
+      <div class="about-image">
+        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop" alt="Team SempruL">
+      </div>
+
+      <div class="about-content">
+
+        <span style="color:var(--primary); font-weight:600;">
+          Tentang SempruL
+        </span>
+
+        <h2>
+          Bukan sekadar coding,
+          tapi membangun pengalaman digital.
+        </h2>
+
+        <p>
+          Kami percaya aplikasi yang baik bukan hanya berjalan,
+          tetapi juga harus nyaman digunakan, cepat, dan memiliki visual yang memorable.
+        </p>
+
+        <p>
+          Dengan pendekatan modern minimalist dan fokus pada user experience,
+          SempruL membantu bisnis tampil lebih profesional di era digital.
+        </p>
+
+        <div class="features">
+
+          <div class="feature">
+            <i class="fa-solid fa-mobile-screen"></i>
+            <div>
+              <h4>Mobile Friendly</h4>
+              <p>
+                Semua project dioptimalkan untuk smartphone dan tablet.
+              </p>
+            </div>
+          </div>
+
+          <div class="feature">
+            <i class="fa-solid fa-palette"></i>
+            <div>
+              <h4>Modern UI Design</h4>
+              <p>
+                Tampilan clean dan premium dengan visual yang engaging.
+              </p>
+            </div>
+          </div>
+
+          <div class="feature">
+            <i class="fa-solid fa-rocket"></i>
+            <div>
+              <h4>Fast Performance</h4>
+              <p>
+                Optimasi loading cepat dan pengalaman penggunaan yang smooth.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- SERVICES -->
+
+  <section id="services">
+
+    <div class="section-title">
+
+      <span>Layanan Kami</span>
+
+      <h2>
+        Solusi digital yang dibuat
+        untuk berkembang
+      </h2>
+
+      <p>
+        Dari landing page modern hingga aplikasi custom,
+        SempruL membantu mewujudkan ide digital dengan tampilan profesional.
+      </p>
+
+    </div>
+
+    <div class="service-grid">
+
+      <div class="service-card">
+
+        <div class="service-icon">
+          <i class="fa-solid fa-globe"></i>
+        </div>
+
+        <h3>Website Modern</h3>
+
+        <p>
+          Landing page dan website bisnis dengan desain clean,
+          responsive, dan terlihat premium.
+        </p>
+
+      </div>
+
+      <div class="service-card">
+
+        <div class="service-icon">
+          <i class="fa-solid fa-mobile"></i>
+        </div>
+
+        <h3>Mobile App</h3>
+
+        <p>
+          Pengembangan aplikasi mobile yang nyaman digunakan dan memiliki UI modern.
+        </p>
+
+      </div>
+
+      <div class="service-card">
+
+        <div class="service-icon">
+          <i class="fa-solid fa-pen-ruler"></i>
+        </div>
+
+        <h3>UI/UX Design</h3>
+
+        <p>
+          Mendesain interface yang aesthetic, user friendly, dan engaging.
+        </p>
+
+      </div>
+
+      <div class="service-card">
+
+        <div class="service-icon">
+          <i class="fa-solid fa-laptop-code"></i>
+        </div>
+
+        <h3>Custom Dashboard</h3>
+
+        <p>
+          Dashboard admin modern untuk kebutuhan bisnis dan manajemen data.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  
+
+  <!-- TESTIMONIAL -->
+
+  <section id="testimonials">
+
+    <div class="section-title">
+
+      <span>Testimoni</span>
+
+      <h2>
+        Apa kata client tentang SempruL?
+      </h2>
+
+    </div>
+
+    <div class="testimonial-grid">
+
+      <div class="testimonial">
+
+        <div class="stars">
+          ★★★★★
+        </div>
+
+        <p>
+          “Desain websitenya clean banget dan keliatan premium.
+          Client saya langsung suka waktu pertama lihat.”
+        </p>
+
+        <div class="profile">
+          <div class="avatar">RA</div>
+
+          <div>
+            <h4>Raka</h4>
+            <span>Startup Founder</span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="testimonial">
+
+        <div class="stars">
+          ★★★★★
+        </div>
+
+        <p>
+          “SempruL ngerti banget style modern sekarang.
+          UI aplikasinya enak dipakai dan responsive.”
+        </p>
+
+        <div class="profile">
+          <div class="avatar">DN</div>
+
+          <div>
+            <h4>Dinda</h4>
+            <span>Business Owner</span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="testimonial">
+
+        <div class="stars">
+          ★★★★★
+        </div>
+
+        <p>
+          “Komunikasi cepat, hasil sesuai ekspektasi,
+          dan visual projectnya gak generic.”
+        </p>
+
+        <div class="profile">
+          <div class="avatar">AL</div>
+
+          <div>
+            <h4>Aldi</h4>
+            <span>Freelancer</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- FAQ -->
+
+  <section id="faq">
+
+    <div class="section-title">
+
+      <span>FAQ</span>
+
+      <h2>
+        Pertanyaan yang sering ditanyakan
+      </h2>
+
+    </div>
+
+    <div class="faq-grid">
+
+      <div class="faq-item">
+        <h4>Apakah bisa request desain custom?</h4>
+        <p>
+          Bisa. Semua project dapat disesuaikan dengan branding dan kebutuhan bisnis Anda.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h4>Apakah website responsive di HP?</h4>
+        <p>
+          Ya. Semua website dan aplikasi dioptimalkan untuk mobile dan desktop.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h4>Berapa lama proses pengerjaan?</h4>
+        <p>
+          Tergantung kompleksitas project, biasanya mulai dari 3 hari hingga beberapa minggu.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h4>Apakah bisa konsultasi dulu?</h4>
+        <p>
+          Tentu. Konsultasi awal gratis untuk membantu menentukan kebutuhan project Anda.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- CONTACT -->
+
+  <section id="contact">
+
+    <div class="section-title">
+
+      <span>Kontak</span>
+
+      <h2>
+        Mari bangun project digital Anda
+      </h2>
+
+      <p>
+        Diskusikan ide aplikasi atau website Anda bersama SempruL.
+      </p>
+
+    </div>
+
+    <div class="contact-wrapper">
+
+      <div class="contact-info">
+
+        <h3>
+          Let's Build Something Great 🚀
+        </h3>
+
+        <p>
+          Kami siap membantu membangun tampilan digital yang modern,
+          profesional, dan memorable.
+        </p>
+
+        <div class="contact-item">
+          <i class="fa-solid fa-location-dot"></i>
+          <div>
+            <h4>Lokasi</h4>
+            <p>Jambi, Indonesia</p>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <i class="fa-solid fa-envelope"></i>
+          <div>
+            <h4>Email</h4>
+            <p>hello@semprul.id</p>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <i class="fa-solid fa-phone"></i>
+          <div>
+            <h4>Telepon</h4>
+            <p>0812-3456-7890</p>
+          </div>
+        </div>
+
+      </div>
+
+      <form>
+
+        <div class="input-group">
+          <label>Nama</label>
+          <input type="text" placeholder="Masukkan nama">
+        </div>
+
+        <div class="input-group">
+          <label>Email</label>
+          <input type="email" placeholder="Masukkan email">
+        </div>
+
+        <div class="input-group">
+          <label>Pesan</label>
+          <textarea placeholder="Ceritakan kebutuhan project Anda..."></textarea>
+        </div>
+
+        <button class="btn btn-primary" type="submit">
+          <i class="fa-solid fa-paper-plane"></i>
+          Kirim Pesan
+        </button>
+
+      </form>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div class="footer-grid">
+
+      <div class="footer-brand">
+
+        <h3>SempruL</h3>
+
+        <p>
+          Modern digital solution untuk bisnis dan personal branding yang ingin tampil lebih premium.
+        </p>
+
+        <div class="socials">
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+          <a href="#"><i class="fa-brands fa-github"></i></a>
+        </div>
+
+      </div>
+
+      <div class="footer-links">
+
+        <h4>Navigasi</h4>
+
+        <a href="#about">About</a>
+        <a href="#services">Layanan</a>
+        <a href="#testimonials">Testimoni</a>
+        <a href="#contact">Kontak</a>
+
+      </div>
+
+      <div class="footer-links">
+
+        <h4>Layanan</h4>
+
+        <a href="#">Website Development</a>
+        <a href="#">Mobile App</a>
+        <a href="#">UI/UX Design</a>
+        <a href="#">Dashboard System</a>
+
+      </div>
+
+      <div class="footer-links">
+
+        <h4>Support</h4>
+
+        <a href="#">Konsultasi</a>
+        <a href="#">Project Planning</a>
+        <a href="#">Maintenance</a>
+        <a href="#">Technical Support</a>
+
+      </div>
+
+    </div>
+
+    <div class="copyright">
+      © 2026 SempruL — Crafted with modern minimalist aesthetic.
+    </div>
+
+  </footer>
+
+</body>
+</html>
